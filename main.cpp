@@ -5,6 +5,10 @@
 #include <codecvt>
 #include <filesystem>
 
+#if _MSC_VER
+#pragma comment (lib, "User32.lib")
+#pragma comment (linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"")
+#endif
 
 const static std::wstring FULL_PATH = L"-path";
 const static std::wstring FILE_NAME = L"-filename";
